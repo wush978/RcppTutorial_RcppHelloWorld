@@ -8,7 +8,7 @@ highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : zenburn      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
-logo : Taiwan-R.png
+logo : Taiwan-R-logo.png
 
 --- &vcenter .large
 
