@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rcpp / C++ Tutorial</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Rcpp / C++ Tutorial">
+  <meta name="author" content="Wush">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/zenburn.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/custom.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/Taiwan-R.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Rcpp / C++ Tutorial</h1>
+    <h2>Rcpp Hello World</h2>
+    <p>Wush<br/>Taiwan R User Group</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="large" id="slide-1">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>Rcpp Hello World</p>
+
+<pre><code class="r">#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// Below is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar)
+
+// For more on using Rcpp click the Help button on the editor toolbar
+
+// [[Rcpp::export]]
+int hello() {
+   Rcout &lt;&lt; &quot;hello&quot; &lt;&lt; std::endl;
+   return 0;
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-2">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><code>#include &lt;Rcpp.h&gt;</code></p>
+
+<p><code>include</code>: 我們要載入套件<code>Rcpp</code></p>
+
+<p><code>Rcpp.h</code>: 標頭檔</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-3">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><code>Rcout &lt;&lt; &quot;hello&quot; &lt;&lt; std::endl;</code></p>
+
+<p>C++ expression</p>
+
+<p><code>;</code></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-4">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>註解</p>
+
+<pre><code class="cpp">// Below is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar)
+
+// For more on using Rcpp click the Help button on the editor toolbar
+
+// [[Rcpp::export]]
+</code></pre>
+
+<p><code>//</code></p>
+
+<p><code>/* ... */</code></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-5">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><code>Rcpp Attributes</code></p>
+
+<p><code>roxygen2</code></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-6">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><code>namespace</code></p>
+
+<pre><code class="cpp">using namespace Rcpp;
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-7">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>手癢了嗎？</p>
+
+<p>一起來打造寫Rcpp的環境吧!</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-8">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>流程控制</p>
+
+<p><code>while</code>語句</p>
+
+<pre><code class="cpp">while(condition) body_statements
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-9">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>Block</p>
+
+<pre><code class="cpp">{
+   //...
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-10">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><code>return</code></p>
+
+<pre><code class="cpp">return retval;
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-11">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>流程控制</p>
+
+<p><code>for</code>語句</p>
+
+<pre><code class="cpp">for( declaration ; stopping condition ; increment statement) 
+  body_statements
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-12">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>流程控制</p>
+
+<p><code>if</code>語句</p>
+
+<pre><code class="cpp">if (condition) statement;
+else statement;
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-13">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>小挑戰</p>
+
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+
+//[[Rcpp::export]]
+int Rwhile() {
+  int retval;
+  /**
+   * 請計算出 1+2+3+...+9733的結果
+   */ 
+  return retval;
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-14">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>小挑戰</p>
+
+<p>印出指定長度的整數</p>
+
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+
+using namespace Rcpp;
+//[[Rcpp::export]]
+void print(NumericVector input, int n) {
+  Rcout &lt;&lt; input[0] &lt;&lt; std::endl;
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-15">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>R 給出了許多C中的機率API</p>
+
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+
+using namespace Rcpp;
+
+//[[Rcpp::export]]
+double Rfrunif() {
+  return Rf_runif(0, 1);
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-16">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>輸入R 的數字序列</p>
+
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+
+using namespace Rcpp;
+
+//[[Rcpp::export]]
+double Rsum(NumericVector src) {
+  //
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-17">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>輸出R 的數字序列</p>
+
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+NumericVector timesTwoVec(NumericVector src) {
+   for(int i = 0;i &lt; src.size();i++) {
+     src[i] = src[i] * 2;
+   }
+   return src;
+}
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-18">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>函數的形態</p>
+
+<pre><code class="cpp">NumericVector timesTwoVec(NumericVector src)
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-19">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>小挑戰</p>
+
+<p>如果不加上<code>using namespace Rcpp</code>會發生什麼事情？</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-20">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><code>class, struct</code></p>
+
+<pre><code class="cpp">#include &lt;Rcpp.h&gt;
+
+struct Generator {
+  double min;
+  double max;
+  double draw() {
+    return Rf_runif(min, max);
+  }  
+};
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-21">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>建構Generator</p>
+
+<p>測試member function</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="large" id="slide-22">
+<img src="assets/img/Taiwan-R-logo.png" class="logo fit100" />
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>Summary</p>
+
+<p>介紹了基本的C++語言</p>
+
+<p>介紹了基本將C++嵌入至R的方法</p>
+
+<p>介紹了基本的將R 的數值物件輸出到C++的方法</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title=''>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title=''>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title=''>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title=''>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title=''>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title=''>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title=''>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title=''>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title=''>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title=''>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title=''>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title=''>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title=''>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title=''>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title=''>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title=''>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title=''>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title=''>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title=''>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title=''>
+         22
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
